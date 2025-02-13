@@ -2,7 +2,7 @@
 // endpoint here: https://developer.themoviedb.org/reference/movie-popular-list
 function getPopularMovies(){
     // the endpoint
-    // TO DO
+    let url = "https://api.themoviedb.org/3/movie/popular?api_key=4aa26ebfb227df12f5388e7cbcadcc79language=en-US&page=1";
     // the place on the page where we'll display the movies
     let popularMovies = document.getElementById("popular");
     let imgUrl = "https://image.tmdb.org/t/p/w400";
@@ -10,7 +10,23 @@ function getPopularMovies(){
 
     // ajax time!
     // create the object
-    // TO DO
+    const data = null;
+
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener('readystatechange', function () {
+    if (this.readyState === this.DONE) {
+        console.log(this.responseText);
+    }
+    });
+
+    xhr.open('GET', url);
+   // xhr.setRequestHeader('accept', 'application/json');
+    //xhr.setRequestHeader('Authorization', 'Bearer 4aa26ebfb227df12f5388e7cbcadcc79');
+
+    //xhr.responseType = "json";
+    xhr.send();
 
     // attach event handlers
     // TO DO
